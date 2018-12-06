@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>エラー</title>
+</head>
+<body>
+<form th:method="post" th:action="@{./}" th:object="${todoCreateForm}">
+    <p>指定されたタスクは存在しません</p>
+</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO一覧</title>
+</head>
+<body>
+    <a th:href="@{todos/new}">作成</a>
+    <p th:if="${todos.isEmpty()}">TODOがありません</p>
+    <ul th:unless="${todos.isEmpty()}">
+        <li th:each="todo: ${todos}">
+            <a th:href="@{todos/{id}/edit(id=${todo.id})}">
+                <span th:unless="${todo.done}" th:text="${todo.content}"></span>
+                <s th:if="${todo.done}" th:text="${todo.content}"></s>
+            </a>
+        </li>
+    </ul>
+</body>
+</html>
